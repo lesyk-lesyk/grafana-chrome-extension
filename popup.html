@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Options</title>
+  <style type="text/css">
+    body {
+      margin: 10px;
+      white-space: nowrap;
+    }
+
+    h1 {
+      font-size: 15px;
+    }
+
+    #container {}
+
+  </style>
+
+  <script src="jquery-3.2.1.min.js"></script>
+  <script src="constants.js"></script>
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</head>
+
+<body>
+  <h1>Options</h1>
+  <div id="container">
+    <span>TimeOut</span>
+    <input id="timeout-input" type="number">
+    <button id="save">Save</button>
+    <br>
+    <input type="checkbox" id="enabled-checkbox"> Enable on this origin
+    <br/>
+    <button id="refresh-btn">Reload Page</button>
+  </div>
+</body>
+
+</html>
