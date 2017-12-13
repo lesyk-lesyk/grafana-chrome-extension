@@ -5,8 +5,7 @@ $(document).ready(function () {
 
       getFromStorage(GRAFANA_TIMEOUT_KEY, origin)
         .then((timeoutValue) => {
-          console.log('timeoutValue', timeoutValue);
-          $('#timeout-input').val(timeoutValue);
+          $('#timeout-input').val(timeoutValue / 1000);
         });
 
       getFromStorage(GRAFANA_ENABLE_KEY, origin)
@@ -17,7 +16,7 @@ $(document).ready(function () {
 
       $("#save").click(function () {
         var timeoutInputValue = $('#timeout-input').val();
-        saveToStorage(GRAFANA_TIMEOUT_KEY, origin, timeoutInputValue);
+        saveToStorage(GRAFANA_TIMEOUT_KEY, origin, timeoutInputValue * 1000);
       });
 
       $('#enabled-checkbox').change(function () {

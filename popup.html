@@ -3,17 +3,32 @@
 
 <head>
   <title>Options</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
   <style type="text/css">
     body {
       margin: 10px;
       white-space: nowrap;
     }
 
-    h1 {
-      font-size: 15px;
+    .main-container {
+      width: 300px;
+      padding-bottom: 20px;
     }
 
-    #container {}
+    .main-header {
+      font-size: 21px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 767px) {
+      .form-horizontal .control-label {
+        padding-top: 7px;
+        margin-bottom: 0;
+        text-align: right;
+      }
+    }
 
   </style>
 
@@ -24,15 +39,38 @@
 </head>
 
 <body>
-  <h1>Options</h1>
-  <div id="container">
-    <span>TimeOut</span>
-    <input id="timeout-input" type="number">
-    <button id="save">Save</button>
-    <br>
-    <input type="checkbox" id="enabled-checkbox"> Enable on this origin
-    <br/>
-    <button id="refresh-btn">Reload Page</button>
+  <div class="container main-container">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <h1 class="main-header text-primary">Text select Options</h1>
+
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="timeout-input" class="col-xs-3 control-label">Timeout:</label>
+            <div class="col-xs-8">
+              <input id="timeout-input" class="form-control" type="number" placeholder="Sec" min="0" step="0.5">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="enabled-checkbox"> Enable on this origin
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-offset-3 col-xs-9">
+              <button id="save" class="btn btn-success">Save</button>
+              <button id="refresh-btn" class="btn btn-warning">Reload Page</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
   </div>
 </body>
 
